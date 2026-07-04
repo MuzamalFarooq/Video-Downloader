@@ -23,7 +23,7 @@ export default function Header() {
             <DownloadCloud className="w-5 h-5" />
           </div>
           <span className="text-md font-black tracking-tight bg-linear-to-r from-zinc-900 to-zinc-600 dark:from-zinc-50 dark:to-zinc-400 bg-clip-text text-transparent">
-            VELOCE
+            CLIPLY
           </span>
           <span className="text-[10px] font-black uppercase text-indigo-500 bg-indigo-500/5 dark:bg-indigo-500/10 border border-indigo-500/20 px-1.5 py-0.5 rounded-md">
             v1.0

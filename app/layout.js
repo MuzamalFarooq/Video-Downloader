@@ -13,15 +13,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const BASE_URL = 'https://velocedownloader.com';
+const BASE_URL = 'https://cliplydownloader.com';
 
 export const metadata = {
   metadataBase: new URL(BASE_URL),
 
   // ── Core ──────────────────────────────────────────────────────────────────
   title: {
-    default: 'Veloce Downloader — Free Online Video Downloader & MP3 Converter',
-    template: '%s | Veloce Downloader',
+    default: 'Cliply Downloader — Free Online Video Downloader & MP3 Converter',
+    template: '%s | Cliply Downloader',
   },
   description:
     'Download videos from YouTube, TikTok, Instagram, Vimeo, Facebook & X (Twitter) in HD 1080p/720p MP4 or 320 kbps MP3. Free, fast, no ads, no registration required.',
@@ -45,7 +45,7 @@ export const metadata = {
   ],
   authors: [{ name: 'Muzamal Farooq', url: BASE_URL }],
   creator: 'Al-Farooq Developers',
-  publisher: 'Veloce Downloader',
+  publisher: 'Cliply Downloader',
   category: 'Technology',
 
   // ── Indexing / Crawling ───────────────────────────────────────────────────
@@ -70,8 +70,8 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: BASE_URL,
-    siteName: 'Veloce Downloader',
-    title: 'Veloce Downloader — Free Online Video Downloader & MP3 Converter',
+    siteName: 'Cliply Downloader',
+    title: 'Cliply Downloader — Free Online Video Downloader & MP3 Converter',
     description:
       'Instantly download videos from YouTube, TikTok, Instagram & more in HD quality. Free, private, no ads.',
     images: [
@@ -79,7 +79,7 @@ export const metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Veloce Downloader — Download any video for free',
+        alt: 'Cliply Downloader — Download any video for free',
         type: 'image/png',
       },
     ],
@@ -88,9 +88,9 @@ export const metadata = {
   // ── Twitter / X Card ──────────────────────────────────────────────────────
   twitter: {
     card: 'summary_large_image',
-    site: '@velocedownload',
+    site: '@cliplydownload',
     creator: '@muzamalfarooq',
-    title: 'Veloce Downloader — Free HD Video Downloader',
+    title: 'Cliply Downloader — Free HD Video Downloader',
     description:
       'Download YouTube, TikTok, Instagram & more videos in HD MP4 or MP3. Completely free.',
     images: ['/og-image.png'],

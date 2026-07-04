@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://velocedownloader.com';
+  const baseUrl = 'https://cliplydownloader.com';
 
   return [
     {

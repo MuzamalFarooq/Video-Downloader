@@ -12,8 +12,8 @@ import DownloadProgress from '../components/DownloadProgress';
 const JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Veloce Downloader',
-  url: 'https://velocedownloader.com',
+  name: 'Cliply Downloader',
+  url: 'https://cliplydownloader.com',
   description:
     'Free online video downloader. Download videos from YouTube, TikTok, Instagram, Facebook, Vimeo, and X (Twitter) in HD MP4 or MP3 format.',
   applicationCategory: 'MultimediaApplication',
@@ -36,7 +36,7 @@ const JSON_LD = {
     'No watermark',
     'Free and unlimited',
   ],
-  screenshot: 'https://velocedownloader.com/og-image.png',
+  screenshot: 'https://cliplydownloader.com/og-image.png',
 };
 
 export default function Home() {
@@ -323,27 +323,27 @@ export default function Home() {
             {[
               {
                 q: 'How do I download a YouTube video for free?',
-                a: 'Paste the YouTube video URL into Veloce Downloader, click Download, then choose MP4 or MP3 format. No account or software needed.',
+                a: 'Paste the YouTube video URL into Cliply Downloader, click Download, then choose MP4 or MP3 format. No account or software needed.',
               },
               {
                 q: 'Can I download TikTok videos without watermark?',
-                a: 'Yes. Veloce Downloader fetches the original TikTok video stream, so the downloaded file has no TikTok watermark.',
+                a: 'Yes. Cliply Downloader fetches the original TikTok video stream, so the downloaded file has no TikTok watermark.',
               },
               {
                 q: 'What video formats are supported?',
                 a: 'We support MP4 (video) in 1080p and 720p, and MP3 (audio) at up to 320 kbps. More formats coming soon.',
               },
               {
-                q: 'Is Veloce Downloader free to use?',
+                q: 'Is Cliply Downloader free to use?',
                 a: '100% free. No subscription, no sign-up, no hidden fees. Just paste a URL and download.',
               },
               {
-                q: 'Which platforms does Veloce support?',
+                q: 'Which platforms does Cliply support?',
                 a: 'YouTube, TikTok, Instagram Reels, Facebook, Vimeo, and X (Twitter). More platforms are added regularly.',
               },
               {
                 q: 'Is it safe to use an online video downloader?',
-                a: 'Veloce Downloader processes files server-side in a sandboxed environment with no trackers, no ads, and no data retention.',
+                a: 'Cliply Downloader processes files server-side in a sandboxed environment with no trackers, no ads, and no data retention.',
               },
             ].map(({ q, a }) => (
               <div
@@ -360,7 +360,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-zinc-200/50 dark:border-zinc-800/40 py-8 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md text-center text-xs text-zinc-400 dark:text-zinc-500">
-        <p>© 2026 Veloce Downloader. Created By Muzamal Farooq || Al-Farooq Developers. All rights reserved.</p>
+        <p>© 2026 Cliply Downloader. Created By Muzamal Farooq || Al-Farooq Developers. All rights reserved.</p>
       </footer>
     </div>
   );

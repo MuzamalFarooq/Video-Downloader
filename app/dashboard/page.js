@@ -52,7 +52,7 @@ export default function Dashboard() {
 
       {/* Footer */}
       <footer className="border-t border-zinc-200/50 dark:border-zinc-800/40 py-8 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md text-center text-xs text-zinc-400 dark:text-zinc-500">
-        <p>© 2026 Veloce Downloader. Created with Next.js 15+, Tailwind CSS, Mongoose & Mocks. All rights reserved.</p>
+        <p>© 2026 Cliply Downloader. Created with Next.js 15+, Tailwind CSS, Mongoose & Mocks. All rights reserved.</p>
       </footer>
     </div>
   );
