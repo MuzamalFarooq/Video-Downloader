@@ -18,6 +18,13 @@ export const metadata = {
   description: "Download high-definition videos instantly from YouTube, Vimeo, TikTok, Instagram, and X (Twitter). Fast, free, secure, and ad-free format conversion.",
   keywords: "video downloader, download youtube video, tiktok download, instagram reels downloader, mp4 downloader, mp3 converter, high speed downloader",
   authors: [{ name: "Antigravity Team" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/icon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export const viewport = {
