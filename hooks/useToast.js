@@ -26,7 +26,7 @@ export function ToastProvider({ children }) {
     <ToastContext.Provider value={{ toast }}>
       {children}
       {/* Toast container overlay */}
-      <div className="fixed bottom-5 right-5 z-[9999] flex flex-col gap-3 w-full max-w-sm pointer-events-none px-4 sm:px-0">
+      <div className="fixed bottom-5 right-5 z-9999 flex flex-col gap-3 w-full max-w-sm pointer-events-none px-4 sm:px-0">
         <AnimatePresence>
           {toasts.map((t) => {
             let Icon = Info;
