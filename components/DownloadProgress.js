@@ -62,7 +62,7 @@ export default function DownloadProgress({ progressData, onReset }) {
         </div>
 
         {/* Dynamic Status Badges */}
-        <span className={`text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full flex items-center gap-1 flex-shrink-0
+        <span className={`text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full flex items-center gap-1 shrink-0
           ${status === 'completed' ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20' :
             status === 'failed' ? 'bg-rose-500/10 text-rose-500 border border-rose-500/20' :
             'bg-indigo-500/10 text-indigo-500 border border-indigo-500/20 animate-pulse'}`}
@@ -92,7 +92,7 @@ export default function DownloadProgress({ progressData, onReset }) {
             initial={{ width: '0%' }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="h-full rounded-full bg-gradient-to-r from-primary-indigo to-primary-purple shadow-[0_0_12px_rgba(99,102,241,0.5)]"
+            className="h-full rounded-full bg-linear-to-r from-primary-indigo to-primary-purple shadow-[0_0_12px_rgba(99,102,241,0.5)]"
           />
         </div>
 
