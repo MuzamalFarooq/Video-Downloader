@@ -9,6 +9,36 @@ import PlatformIcons from '../components/PlatformIcons';
 import VideoDetailCard from '../components/VideoDetailCard';
 import DownloadProgress from '../components/DownloadProgress';
 
+const JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Veloce Downloader',
+  url: 'https://velocedownloader.com',
+  description:
+    'Free online video downloader. Download videos from YouTube, TikTok, Instagram, Facebook, Vimeo, and X (Twitter) in HD MP4 or MP3 format.',
+  applicationCategory: 'MultimediaApplication',
+  operatingSystem: 'All',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  featureList: [
+    'YouTube video download',
+    'TikTok video download',
+    'Instagram Reels download',
+    'Facebook video download',
+    'Vimeo video download',
+    'X (Twitter) video download',
+    'HD 1080p MP4 download',
+    'MP3 audio extraction',
+    'No registration required',
+    'No watermark',
+    'Free and unlimited',
+  ],
+  screenshot: 'https://velocedownloader.com/og-image.png',
+};
+
 export default function Home() {
   const [stage, setStage] = useState('input'); // 'input', 'resolved', 'downloading'
   const [metadata, setMetadata] = useState(null);
@@ -163,6 +193,12 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
+
       <Header />
 
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col gap-16 items-center">
@@ -269,6 +305,55 @@ export default function Home() {
                 </motion.div>
               );
             })}
+          </div>
+        </section>
+
+        {/* SEO: FAQ Section — helps rank for question-based searches & FAQ rich results */}
+        <section className="w-full flex flex-col gap-6 pt-10 border-t border-zinc-200/50 dark:border-zinc-800/40">
+          <div className="text-center">
+            <h2 className="text-2xl font-black text-zinc-950 dark:text-zinc-50 tracking-tight">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+              Everything you need to know about downloading videos online.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto w-full">
+            {[
+              {
+                q: 'How do I download a YouTube video for free?',
+                a: 'Paste the YouTube video URL into Veloce Downloader, click Download, then choose MP4 or MP3 format. No account or software needed.',
+              },
+              {
+                q: 'Can I download TikTok videos without watermark?',
+                a: 'Yes. Veloce Downloader fetches the original TikTok video stream, so the downloaded file has no TikTok watermark.',
+              },
+              {
+                q: 'What video formats are supported?',
+                a: 'We support MP4 (video) in 1080p and 720p, and MP3 (audio) at up to 320 kbps. More formats coming soon.',
+              },
+              {
+                q: 'Is Veloce Downloader free to use?',
+                a: '100% free. No subscription, no sign-up, no hidden fees. Just paste a URL and download.',
+              },
+              {
+                q: 'Which platforms does Veloce support?',
+                a: 'YouTube, TikTok, Instagram Reels, Facebook, Vimeo, and X (Twitter). More platforms are added regularly.',
+              },
+              {
+                q: 'Is it safe to use an online video downloader?',
+                a: 'Veloce Downloader processes files server-side in a sandboxed environment with no trackers, no ads, and no data retention.',
+              },
+            ].map(({ q, a }) => (
+              <div
+                key={q}
+                className="p-5 rounded-2xl border border-zinc-200/50 dark:border-zinc-800/40 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md"
+              >
+                <h3 className="text-sm font-bold text-zinc-900 dark:text-zinc-50 mb-1.5">{q}</h3>
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">{a}</p>
+              </div>
+            ))}
           </div>
         </section>
       </main>

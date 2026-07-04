@@ -13,17 +13,96 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const BASE_URL = 'https://velocedownloader.com';
+
 export const metadata = {
-  title: "Veloce Downloader | High-Speed Video Downloader & Converter",
-  description: "Download high-definition videos instantly from YouTube, Vimeo, TikTok, Instagram, and X (Twitter). Fast, free, secure, and ad-free format conversion.",
-  keywords: "video downloader, download youtube video, tiktok download, instagram reels downloader, mp4 downloader, mp3 converter, high speed downloader",
-  authors: [{ name: "Antigravity Team" }],
+  metadataBase: new URL(BASE_URL),
+
+  // ── Core ──────────────────────────────────────────────────────────────────
+  title: {
+    default: 'Veloce Downloader — Free Online Video Downloader & MP3 Converter',
+    template: '%s | Veloce Downloader',
+  },
+  description:
+    'Download videos from YouTube, TikTok, Instagram, Vimeo, Facebook & X (Twitter) in HD 1080p/720p MP4 or 320 kbps MP3. Free, fast, no ads, no registration required.',
+  keywords: [
+    'video downloader',
+    'youtube video downloader',
+    'tiktok video downloader',
+    'instagram reels downloader',
+    'facebook video downloader',
+    'twitter video downloader',
+    'vimeo downloader',
+    'mp4 downloader',
+    'mp3 converter',
+    'youtube to mp3',
+    'youtube to mp4',
+    'download youtube videos free',
+    'hd video downloader',
+    '1080p downloader',
+    'free online video downloader',
+    'no watermark video download',
+  ],
+  authors: [{ name: 'Muzamal Farooq', url: BASE_URL }],
+  creator: 'Al-Farooq Developers',
+  publisher: 'Veloce Downloader',
+  category: 'Technology',
+
+  // ── Indexing / Crawling ───────────────────────────────────────────────────
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: BASE_URL,
+  },
+
+  // ── Open Graph (Facebook, LinkedIn, WhatsApp previews) ────────────────────
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: BASE_URL,
+    siteName: 'Veloce Downloader',
+    title: 'Veloce Downloader — Free Online Video Downloader & MP3 Converter',
+    description:
+      'Instantly download videos from YouTube, TikTok, Instagram & more in HD quality. Free, private, no ads.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Veloce Downloader — Download any video for free',
+        type: 'image/png',
+      },
+    ],
+  },
+
+  // ── Twitter / X Card ──────────────────────────────────────────────────────
+  twitter: {
+    card: 'summary_large_image',
+    site: '@velocedownload',
+    creator: '@muzamalfarooq',
+    title: 'Veloce Downloader — Free HD Video Downloader',
+    description:
+      'Download YouTube, TikTok, Instagram & more videos in HD MP4 or MP3. Completely free.',
+    images: ['/og-image.png'],
+  },
+
+  // ── Icons ─────────────────────────────────────────────────────────────────
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
     ],
-    apple: [{ url: "/icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: '/icon.png', sizes: '180x180', type: 'image/png' }],
   },
 };
 
