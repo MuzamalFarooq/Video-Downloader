@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: cliply-downloader
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    # Render's free tier spins down after 15 min inactivity — this is normal
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: YTDLP_PATH
+        value: /usr/local/bin/yt-dlp
+      - key: DOWNLOADS_DIR
+        value: /tmp/downloads
+      # Add your MongoDB URI here or in Render's dashboard (Environment tab)
+      # - key: MONGODB_URI
+      #   value: your_mongodb_atlas_uri_here

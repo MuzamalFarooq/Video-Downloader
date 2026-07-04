@@ -4,7 +4,10 @@ import { spawn } from 'child_process';
 import ffmpegPath from 'ffmpeg-static';
 
 const BIN_DIR = path.join(process.cwd(), 'bin');
-const DOWNLOADS_DIR = path.join(process.cwd(), 'downloads');
+// Use DOWNLOADS_DIR env var on production (e.g. /tmp/downloads on Render/Docker)
+// Falls back to local downloads/ folder in development
+const DOWNLOADS_DIR = process.env.DOWNLOADS_DIR || path.join(process.cwd(), 'downloads');
+
 
 // Get the ffmpeg executable directory
 export function getFfmpegDir() {
@@ -16,6 +19,12 @@ export function getFfmpegDir() {
 
 // Get correct yt-dlp binary name and download URL for the current platform
 function getYtDlpPlatformConfig() {
+  // If YTDLP_PATH is set (e.g. on a VPS/Docker: /usr/local/bin/yt-dlp), use it directly.
+  // This is required for production deployments where yt-dlp is installed system-wide.
+  if (process.env.YTDLP_PATH) {
+    return { binaryPath: process.env.YTDLP_PATH, downloadUrl: null };
+  }
+
   const platform = process.platform;
   let binaryName = 'yt-dlp';
   let downloadUrl = 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp';
@@ -34,13 +43,22 @@ function getYtDlpPlatformConfig() {
   };
 }
 
-// Ensure the yt-dlp binary exists, downloading it if necessary
+// Ensure the yt-dlp binary exists, downloading it if necessary.
+// If YTDLP_PATH env var is set, assumes the binary already exists at that path (no download).
 export async function ensureYtDlp() {
+  const { binaryPath, downloadUrl } = getYtDlpPlatformConfig();
+
+  // If using a system-installed binary (set via YTDLP_PATH), trust it exists
+  if (process.env.YTDLP_PATH) {
+    if (!fs.existsSync(binaryPath)) {
+      throw new Error(`YTDLP_PATH is set to "${binaryPath}" but the binary was not found. Please install yt-dlp on the server.`);
+    }
+    return binaryPath;
+  }
+
   if (!fs.existsSync(BIN_DIR)) {
     fs.mkdirSync(BIN_DIR, { recursive: true });
   }
-
-  const { binaryPath, downloadUrl } = getYtDlpPlatformConfig();
 
   if (fs.existsSync(binaryPath)) {
     return binaryPath;

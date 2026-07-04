@@ -15,7 +15,8 @@ export async function GET(request) {
 
     // Clean filename to prevent directory traversal
     const cleanFilename = path.basename(filename);
-    const filePath = path.join(process.cwd(), 'downloads', cleanFilename);
+    const downloadsDir = process.env.DOWNLOADS_DIR || path.join(process.cwd(), 'downloads');
+    const filePath = path.join(downloadsDir, cleanFilename);
 
     if (!fs.existsSync(filePath)) {
       return NextResponse.json({ error: 'Requested file not found or has expired' }, { status: 404 });

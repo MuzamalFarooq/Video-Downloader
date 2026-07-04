@@ -1,0 +1,9 @@
+.git
+.next
+node_modules
+.env
+.env.local
+downloads/
+*.log
+README.md
+.gitignore
