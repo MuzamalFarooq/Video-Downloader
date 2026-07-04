@@ -179,7 +179,7 @@ export default function Home() {
           </motion.div>
 
           <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-zinc-950 dark:text-zinc-50 leading-tight">
-            Download Videos <span className="bg-gradient-to-r from-primary-indigo to-primary-purple bg-clip-text text-transparent">Instantly</span>
+            Download Videos <span className="bg-linear-to-r from-primary-indigo to-primary-purple bg-clip-text text-transparent">Instantly</span>
           </h1>
           
           <p className="text-sm sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed">
