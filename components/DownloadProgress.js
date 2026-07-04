@@ -106,7 +106,7 @@ export default function DownloadProgress({ progressData, onReset }) {
       {/* Error state */}
       {status === 'failed' && (
         <div className="p-3 bg-rose-500/5 dark:bg-rose-500/10 border border-rose-500/20 rounded-xl flex items-center gap-2 text-rose-500 text-xs font-semibold leading-normal">
-          <AlertCircle className="w-4 h-4 flex-shrink-0" />
+          <AlertCircle className="w-4 h-4 shrink-0" />
           <span>Error: {error || 'Stream connection closed unexpectedly.'}</span>
         </div>
       )}
